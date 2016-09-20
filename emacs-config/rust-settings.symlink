@@ -1,0 +1,21 @@
+;;; -*- mode: emacs-lisp; -*-
+
+(setq racer-rust-src-path "~/code/rust/src/")
+
+(add-hook 'racer-mode-hook (lambda ()
+			     (eldoc-mode)
+			     (company-mode)
+			     (setq company-tooltip-align-annotations t)))
+
+(add-hook 'rust-mode-hook (lambda ()
+			    (racer-mode)
+			    (highlight-indentation-mode)
+			    (cargo-minor-mode)
+			    (add-hook 'before-save-hook 'rust-format-buffer)))
+
+(add-hook 'rust-mode-hook (lambda ()
+			    (local-set-key (kbd "C-c <tab>") 'rust-format-buffer)
+			    (local-set-key (kbd "TAB") 'company-indent-or-complete-common)))
+
+(provide 'rust-settings)
+;;; rust-settings.symlink ends here

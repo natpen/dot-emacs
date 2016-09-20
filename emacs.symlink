@@ -1,0 +1,44 @@
+;;; -*- mode: emacs-lisp; -*-
+
+(load "~/.emacs-config/.general-configuration")
+(load "~/.emacs-config/.install-packages")
+(dumb-jump-mode)
+(global-set-key (kbd "C-c .") 'dumb-jump-go)
+(global-set-key (kbd "C-c ,") 'dumb-jump-quick-look)
+(global-set-key (kbd "C-c M-.") 'dumb-jump-back)
+(global-set-key (kbd "C-c g") 'writegood-mode)
+(load-theme 'zenburn t)
+(load "~/.emacs-config/.flycheck-init")
+(load "~/.emacs-config/.multiple-cursors-init")
+(load "~/.emacs-config/.linum-init")
+(load "~/.emacs-config/.ido-init")
+(load "~/.emacs-config/.flx-init")
+(load "~/.emacs-config/.projectile-init")
+(load "~/.emacs-config/.smex-init")
+(load "~/.emacs-config/.magit-init")
+(load "~/.emacs-config/.highlight-indentation")
+(load "~/.emacs-config/.auto-complete")
+(load "~/.emacs-config/.writegood-init")
+
+;; language-specific
+(load "~/.emacs-config/.golang-settings")
+(load "~/.emacs-config/.javascript-settings")
+(load "~/.emacs-config/.python-settings")
+(load "~/.emacs-config/.rust-settings")
+
+(server-start)
+(add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("1fc1fdf975c8c8c3767c29787a063eee50cbceef903644a0771fa66568ee8777" "5999e12c8070b9090a2a1bbcd02ec28906e150bb2cdce5ace4f965c76cf30476" "e56ee322c8907feab796a1fb808ceadaab5caba5494a50ee83a13091d5b1a10c" "cdbd0a803de328a4986659d799659939d13ec01da1f482d838b68038c1bb35e8" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
