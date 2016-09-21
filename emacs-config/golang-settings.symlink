@@ -1,5 +1,7 @@
 ;;; -*- mode: emacs-lisp; -*-
 
+;; go-autocomplete, go-eldoc, go-mode
+
 (add-hook 'go-mode-hook (lambda ()
 			  ;;(setq highlight-indentation-mode t)
 			  (setq tab-width 2)
