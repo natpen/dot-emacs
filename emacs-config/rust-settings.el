@@ -2,8 +2,8 @@
 
 ;; cargo, company, flycheck-rust, racer, rust-mode
 
-(use-package cargo
-  :ensure t)
+;; (use-package cargo
+;;   :ensure t)
 
 (setq racer-rust-src-path "~/code/rust/src/")
 

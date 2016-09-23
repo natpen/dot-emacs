@@ -15,5 +15,5 @@
 			  (local-set-key (kbd "C-c C-g") 'go-goto-imports)
 			  (local-set-key (kbd "M-.") 'godef-jump)))
 
-(provide 'go-settings)
-;;; go-settings.symlink ends here
+(provide 'golang-settings)
+;;; golang-settings.symlink ends here
