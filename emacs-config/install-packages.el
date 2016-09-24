@@ -30,12 +30,9 @@
     ggtags
     haskell-mode
     highlight-symbol
-    jedi
     jsfmt
     linum-relative
     markdown-mode
-    multiple-cursors
-    py-yapf
     racer
     rust-mode
     smartparens
