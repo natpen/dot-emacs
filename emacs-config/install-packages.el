@@ -31,7 +31,6 @@
     markdown-mode
     smartparens
     smex
-    writegood-mode
     yaml-mode
     zenburn-theme)
   "A list of packages to ensure are installed at launch.")

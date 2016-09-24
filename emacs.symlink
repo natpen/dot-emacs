@@ -13,7 +13,6 @@
 (global-set-key (kbd "C-c .") 'dumb-jump-go)
 (global-set-key (kbd "C-c ,") 'dumb-jump-quick-look)
 (global-set-key (kbd "C-c M-.") 'dumb-jump-back)
-(global-set-key (kbd "C-c g") 'writegood-mode)
 (load-theme 'zenburn t)
 (load "~/.emacs-config/flycheck-init.el")
 (load "~/.emacs-config/eshell-init.el")
