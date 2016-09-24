@@ -1,14 +1,14 @@
 ;;; -*- mode: emacs-lisp; -*-
 
-;; (require 'magit-gh-pulls)
-;; (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
-
 (use-package magit
 	     :diminish
 	     :init
 	     (progn
-	       (use-package magit-blame)
-	       (bind-key "C-c C-a" 'magit-just-amend magit-mode-map))
+	       (use-package ido-completing-read+
+		 :ensure t)
+	       (use-package magit-gh-pulls
+		 :ensure t)
+	       (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls))
 	     :config
 	     (progn
 	       (setq magit-completing-read-function 'magit-ido-completing-read)
@@ -17,7 +17,6 @@
 	     :bind
 	     (("C-x g" . magit-status)
 	      ("C-x M-g" . magit-dispatch-popup)))
-
 
 (provide 'magit-init)
 ;;; magit-init.el ends here

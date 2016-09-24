@@ -36,7 +36,6 @@
     jedi
     jsfmt
     linum-relative
-    ;; magit-gh-pulls
     markdown-mode
     multiple-cursors
     py-yapf
