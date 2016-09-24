@@ -32,6 +32,7 @@
 (load "~/.emacs-config/javascript-settings.el")
 (load "~/.emacs-config/python-settings.el")
 (load "~/.emacs-config/rust-settings.el")
+(load "~/.emacs-config/haskell-settings.el")
 
 ;;(server-start)
 (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))

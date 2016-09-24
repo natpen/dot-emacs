@@ -23,14 +23,11 @@
   '(ag
     diminish
     dumb-jump
-    flycheck-haskell
     ggtags
-    haskell-mode
     highlight-symbol
     linum-relative
     markdown-mode
     smartparens
-    smex
     yaml-mode
     zenburn-theme)
   "A list of packages to ensure are installed at launch.")
