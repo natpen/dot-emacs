@@ -21,19 +21,14 @@
 
 (defvar known-packages
   '(ag
-    cargo
-    company
     diminish
     dumb-jump
     flycheck-haskell
-    flycheck-rust
     ggtags
     haskell-mode
     highlight-symbol
     linum-relative
     markdown-mode
-    racer
-    rust-mode
     smartparens
     smex
     writegood-mode
