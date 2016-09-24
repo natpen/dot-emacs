@@ -18,6 +18,26 @@
    kept-old-versions 6
    version-control t)        ; use versioned backups
 
+(use-package ag
+  :ensure t)
+(use-package diminish
+  :ensure t)
+(use-package dumb-jump
+  :ensure t)
+(use-package ggtags
+  :ensure t)
+(use-package highlight-symbol
+  :ensure t)
+(use-package markdown-mode
+  :ensure t)
+(use-package smartparens
+  :ensure t)
+(use-package yaml-mode
+  :ensure t)
+(use-package zenburn-theme
+  :ensure t
+  :init (add-hook 'after-init-hook (load-theme 'zenburn t)))
+
 (defun prelude-toggle-fold ()
   "Toggle fold all lines larger than indentation on current line"
   (interactive)

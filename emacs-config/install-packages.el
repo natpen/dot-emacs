@@ -20,16 +20,7 @@
 (require 'use-package)
 
 (defvar known-packages
-  '(ag
-    diminish
-    dumb-jump
-    ggtags
-    highlight-symbol
-    linum-relative
-    markdown-mode
-    smartparens
-    yaml-mode
-    zenburn-theme)
+  '(linum-relative)
   "A list of packages to ensure are installed at launch.")
 
 (defun known-packages-installed-p ()
