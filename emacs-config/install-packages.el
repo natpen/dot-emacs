@@ -28,9 +28,6 @@
     flycheck-haskell
     flycheck-rust
     ggtags
-    go-autocomplete
-    go-eldoc
-    go-mode
     haskell-mode
     highlight-symbol
     jedi
