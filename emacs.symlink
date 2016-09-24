@@ -9,10 +9,7 @@
 
 (load "~/.emacs-config/general-configuration.el")
 (load "~/.emacs-config/install-packages.el")
-(dumb-jump-mode)
-(global-set-key (kbd "C-c .") 'dumb-jump-go)
-(global-set-key (kbd "C-c ,") 'dumb-jump-quick-look)
-(global-set-key (kbd "C-c M-.") 'dumb-jump-back)
+(load "~/.emacs-config/dumb-jump-init.el")
 (load "~/.emacs-config/flycheck-init.el")
 (load "~/.emacs-config/eshell-init.el")
 (load "~/.emacs-config/drag-stuff-init.el")
