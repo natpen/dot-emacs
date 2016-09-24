@@ -2,8 +2,11 @@
 
 (add-hook 'js-mode-hook
 	  (lambda ()
+	    (use-package jsfmt
+	      :ensure t
+	      :init
+	      (add-hook 'before-save-hook 'jsfmt-before-save))
 	    (highlight-indentation-mode)
-	    (add-hook 'before-save-hook 'jsfmt-before-save)
 	    (setq indent-tabs-mode nil)
 	    (setq tab-width 2)
 	    (setq js-indent-level 2)))

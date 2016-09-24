@@ -30,7 +30,6 @@
     ggtags
     haskell-mode
     highlight-symbol
-    jsfmt
     linum-relative
     markdown-mode
     racer
