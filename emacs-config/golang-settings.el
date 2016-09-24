@@ -2,6 +2,8 @@
 
 ;; go-autocomplete, go-eldoc, go-mode
 
+(require 'go-autocomplete)
+
 (add-hook 'go-mode-hook (lambda ()
 			  ;;(setq highlight-indentation-mode t)
 			  (setq tab-width 2)

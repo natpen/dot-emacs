@@ -7,8 +7,6 @@
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
-(add-hook 'after-init-hook 'global-flycheck-mode)
-
 ;(setq erc-hide-list '("JOIN" "PART" "QUIT"))
 
 (setq

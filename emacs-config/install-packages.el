@@ -21,13 +21,10 @@
 
 (defvar known-packages
   '(ag
-    auto-complete
     cargo
     company
     diminish
     dumb-jump
-    flx-ido
-    flycheck
     flycheck-haskell
     flycheck-rust
     ggtags
@@ -36,15 +33,12 @@
     go-mode
     haskell-mode
     highlight-symbol
-    ido-vertical-mode
     jedi
     jsfmt
     linum-relative
-    magit
-    magit-gh-pulls
+    ;; magit-gh-pulls
     markdown-mode
     multiple-cursors
-    projectile
     py-yapf
     racer
     rust-mode
