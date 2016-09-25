@@ -24,9 +24,9 @@
 	    (highlight-indentation-mode)
 	    (cargo-minor-mode)
 	    (add-hook 'before-save-hook 'rust-format-buffer))
-  :bind (:map (rust-mode-map
-	       ("C-c [tab]" . rust-format-buffer)
-	       ("[tab]" . company-indent-or-complete-common))))
+  :bind (:map rust-mode-map
+	      ("C-c [tab]" . rust-format-buffer)
+	      ("[tab]" . company-indent-or-complete-common)))
 
 (provide 'rust-settings)
 ;;; rust-settings.symlink ends here
