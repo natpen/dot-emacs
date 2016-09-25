@@ -16,6 +16,7 @@
 (load "~/.emacs-config/multiple-cursors-init.el")
 (load "~/.emacs-config/linum-init.el")
 (load "~/.emacs-config/ido-init.el")
+(load "~/.emacs-config/which-key-init.el")
 (load "~/.emacs-config/projectile-init.el")
 (load "~/.emacs-config/smex-init.el")
 (load "~/.emacs-config/magit-init.el")
