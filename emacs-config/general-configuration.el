@@ -48,6 +48,8 @@
   :ensure t)
 (use-package markdown-mode
   :ensure t)
+(use-package restclient
+	:ensure t)
 (use-package smartparens
   :ensure t)
 (use-package yaml-mode
