@@ -39,6 +39,9 @@
   :ensure t)
 (use-package dumb-jump
   :ensure t)
+(use-package expand-region
+	:ensure t
+	:bind ("C-=" . er/expand-region))
 (use-package ggtags
   :ensure t)
 (use-package highlight-symbol
