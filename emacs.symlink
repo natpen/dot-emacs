@@ -19,7 +19,6 @@
 (load "~/.emacs-config/projectile-init.el")
 (load "~/.emacs-config/smex-init.el")
 (load "~/.emacs-config/magit-init.el")
-(load "~/.emacs-config/highlight-indentation.el")
 (load "~/.emacs-config/auto-complete-settings.el")
 (load "~/.emacs-config/writegood-init.el")
 

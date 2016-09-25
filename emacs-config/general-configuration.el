@@ -37,6 +37,8 @@
 (use-package zenburn-theme
   :ensure t
   :init (add-hook 'after-init-hook (load-theme 'zenburn t)))
+(use-package highlight-indentation
+	:ensure t)
 
 (defun prelude-toggle-fold ()
   "Toggle fold all lines larger than indentation on current line"
