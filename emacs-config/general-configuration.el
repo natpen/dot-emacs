@@ -7,6 +7,21 @@
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
 
+;; stop warnings from GnuTLS library when using HTTPS
+(setq gnutls-min-prime-bits 4096)
+
+;; ain't nobody got time to type "yes"
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(when (window-system)
+  (tool-bar-mode 0)
+  (when (fboundp 'horizontal-scroll-bar-mode)
+    (horizontal-scroll-bar-mode -1))
+  (scroll-bar-mode -1))
+
+(show-paren-mode t)
+(setq require-final-newline t)
+
 ;(setq erc-hide-list '("JOIN" "PART" "QUIT"))
 
 (setq
