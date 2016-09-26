@@ -65,6 +65,15 @@
 (use-package highlight-indentation
 	:ensure t)
 
+(defun delete-current-line ()
+  "Delete (not kill) the current line."
+  (interactive)
+  (save-excursion
+    (delete-region
+     (progn (forward-visible-line 0) (point))
+     (progn (forward-visible-line 1) (point)))))
+(global-set-key (kbd "C-c DEL") 'delete-current-line)
+
 (defun prelude-toggle-fold ()
   "Toggle fold all lines larger than indentation on current line"
   (interactive)
