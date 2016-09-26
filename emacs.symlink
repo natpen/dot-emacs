@@ -25,5 +25,4 @@
 (load "~/.emacs-config/rust-settings.el")
 (load "~/.emacs-config/haskell-settings.el")
 
-;;(server-start)
 (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))

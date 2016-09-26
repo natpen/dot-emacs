@@ -2,7 +2,7 @@
 
 (use-package which-key
   :ensure t
-  :diminish
+  :diminish which-key-mode
   :config
   (setq which-key-key-replacement-alist
 	'(("<\\([[:alnum:]-]+\\)>" . "\\1")

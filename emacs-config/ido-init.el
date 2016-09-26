@@ -2,7 +2,7 @@
 
 (use-package ido
   :ensure t
-  :diminish
+  :diminish ido-mode
   :init
   (progn (ido-mode 1)
 	 (use-package ido-vertical-mode

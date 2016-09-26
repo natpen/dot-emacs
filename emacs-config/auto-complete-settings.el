@@ -2,7 +2,6 @@
 
 (use-package auto-complete
   :ensure t
-  :diminish
   :init
   (progn
     (require 'auto-complete-config)

@@ -1,10 +1,12 @@
 ;;; -*- mode: emacs-lisp; -*-
 
 (use-package cargo
-  :ensure t)
+  :ensure t
+  :diminish cargo-minor-mode)
 
 (use-package company
   :ensure t
+  :diminish "CO"
   :init (setq annotations-company-tooltip-align t))
 
 (use-package flycheck-rust
@@ -12,6 +14,7 @@
 
 (use-package racer
   :ensure t
+  :diminish racer-mode
   :init (setq racer-rust-src-path "~/code/rust/src/")
   :config (progn
 	    (eldoc-mode)

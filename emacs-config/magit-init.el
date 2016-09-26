@@ -1,13 +1,14 @@
 ;;; -*- mode: emacs-lisp; -*-
 
 (use-package magit
-	     :diminish
+	     :ensure t
 	     :init
 	     (progn
 	       (use-package ido-completing-read+
 		 :ensure t)
 	       (use-package magit-gh-pulls
-		 :ensure t)
+		 :ensure t
+		 :diminish "+PRs")
 	       (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls))
 	     :config
 	     (progn

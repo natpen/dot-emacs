@@ -2,7 +2,6 @@
 
 (use-package flycheck
   :ensure t
-  :diminish 'FC
   :config
   (progn
     (setq flycheck-display-errors-function nil)

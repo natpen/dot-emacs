@@ -2,7 +2,7 @@
 
 (use-package drag-stuff
   :ensure t
-  :diminish
+  :diminish drag-stuff-mode
   :init (progn
 	  (setq drag-stuff-modifier '(meta shift))
 	  (drag-stuff-global-mode 1)))
