@@ -1,7 +1,8 @@
 ;;; -*- mode: emacs-lisp; -*-
 
 (use-package go-eldoc
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package go-autocomplete
   :ensure t)
@@ -10,8 +11,8 @@
   :ensure t
   :config
   (progn (setq tab-width 2)
-	 (add-hook 'before-save-hook 'gofmt-before-save)
-	 (go-eldoc-setup))
+	 (go-eldoc-setup)
+	 (add-hook 'before-save-hook 'gofmt-before-save))
   :bind (:map go-mode-map
 	      ("C-c f" . gofmt)
 	      ("C-c C-k" . godoc-at-point)
