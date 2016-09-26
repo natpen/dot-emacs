@@ -1,14 +1,9 @@
 ;;; -*- mode: emacs-lisp; -*-
 
+;;(package-initialize)
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
+(load "~/.emacs-config/package-management-init.el")
 (load "~/.emacs-config/general-configuration.el")
-(load "~/.emacs-config/install-packages.el")
 (load "~/.emacs-config/dumb-jump-init.el")
 (load "~/.emacs-config/flycheck-init.el")
 (load "~/.emacs-config/eshell-init.el")
