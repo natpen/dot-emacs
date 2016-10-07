@@ -36,4 +36,4 @@
 	      ("[tab]" . company-indent-or-complete-common)))
 
 (provide 'rust-settings)
-;;; rust-settings.symlink ends here
+;;; rust-settings.el ends here

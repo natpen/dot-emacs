@@ -46,7 +46,7 @@
     (exec-path-from-shell-initialize)))
 (use-package expand-region
 	:ensure t
-	:bind ("C-=" . er/expand-region))
+	:bind ("C-c n e" . er/expand-region))
 (use-package ggtags
   :ensure t)
 (use-package highlight-symbol

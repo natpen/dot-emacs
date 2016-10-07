@@ -24,5 +24,6 @@
 (load "~/.emacs-config/python-settings.el")
 (load "~/.emacs-config/rust-settings.el")
 (load "~/.emacs-config/haskell-settings.el")
+(load "~/.emacs-config/web-mode-settings.el")
 
 (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))

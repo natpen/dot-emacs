@@ -1,7 +1,7 @@
 ;;; -*- mode: emacs-lisp; -*-
 
 (use-package eshell
-  :bind ("M-e" . eshell)
+  :bind ("C-c n x" . eshell)
   :init
   (add-hook 'eshell-first-time-mode-hook
             (lambda ()
