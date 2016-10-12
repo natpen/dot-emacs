@@ -3,13 +3,8 @@
 (use-package magit
 	     :ensure t
 	     :init
-	     (progn
-	       (use-package ido-completing-read+
-		 :ensure t)
-	       (use-package magit-gh-pulls
-		 :ensure t
-		 :diminish "+PRs")
-	       (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls))
+	     (use-package ido-completing-read+
+	       :ensure t)
 	     :config
 	     (progn
 	       (setq magit-completing-read-function 'magit-ido-completing-read)
