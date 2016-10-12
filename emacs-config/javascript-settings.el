@@ -9,7 +9,9 @@
 	    (highlight-indentation-mode)
 	    (setq indent-tabs-mode nil)
 	    (setq tab-width 2)
-	    (setq js-indent-level 2)))
+	    (setq js-indent-level 2)
+	    (yas-reload-all)
+	    (yas-minor-mode)))
 
 (provide 'javascript-settings)
 ;;; javascript-settings.symlink ends here

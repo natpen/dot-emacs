@@ -25,6 +25,10 @@
 
 (use-package rust-mode
   :ensure t
+  :init
+  (add-hook 'rust-mode-hook (lambda()
+			      (yas-reload-all)
+			      (yas-minor-mode)))
   :config (progn
 	    (racer-mode)
 	    (highlight-indentation-mode)

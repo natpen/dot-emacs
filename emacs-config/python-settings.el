@@ -11,7 +11,9 @@
 				  (jedi:setup)
 				  (setq jedi:complete-on-dot t)))
 			      (eldoc-mode)
-			      (setq tab-width 2)))
+			      (setq tab-width 2)
+			      (yas-reload-all)
+			      (yas-minor-mode)))
 
 (provide 'python-settings)
 ;;; python-settings.symlink ends here1

@@ -9,6 +9,10 @@
 
 (use-package go-mode
   :ensure t
+  :init
+  (add-hook 'go-mode-hook (lambda()
+  			    (yas-reload-all)
+  			    (yas-minor-mode)))
   :config
   (progn (setq tab-width 2)
 	 (go-eldoc-setup)
