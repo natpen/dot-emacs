@@ -10,6 +10,7 @@
     (setq projectile-enable-caching t)
     (setq projectile-require-project-root nil)
     (setq projectile-completion-system 'ido)
+    (setq projectile-switch-project-action 'magit-status)
     (add-to-list 'projectile-globally-ignored-files ".DS_Store")
     (add-to-list 'projectile-globally-ignored-files "node_modules")))
 
