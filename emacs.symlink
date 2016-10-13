@@ -14,7 +14,7 @@
 (load "~/.emacs-config/which-key-init.el")
 (load "~/.emacs-config/projectile-init.el")
 (load "~/.emacs-config/smex-init.el")
-(load "~/.emacs-config/magit-init.el")
+(load "~/.emacs-config/git-init.el")
 (load "~/.emacs-config/auto-complete-settings.el")
 (load "~/.emacs-config/writegood-init.el")
 (load "~/.emacs-config/yasnippet-init.el")

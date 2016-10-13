@@ -1,5 +1,16 @@
 ;;; -*- mode: emacs-lisp; -*-
 
+(use-package git-messenger
+  :ensure t
+  :bind
+  ("C-x v p" . git-messenger:popup-message))
+
+(use-package git-timemachine
+  :ensure t
+  :bind
+  (("C-x v t" . git-timemachine)
+   ("C-x v o" . git-timemachine-toggle)))
+
 (use-package magit
 	     :ensure t
 	     :init
