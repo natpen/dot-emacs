@@ -2,11 +2,11 @@
 
 (use-package flycheck-haskell
   :ensure t
-  :defer)
+  :defer t)
 
 (use-package haskell-mode
   :ensure t
-  :defer
+  :defer t
   :init
   (lambda()
     (yas-reload-all)
