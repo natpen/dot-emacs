@@ -2,6 +2,8 @@
 
 ;;(package-initialize)
 
+(load "~/.emacs-config/utils.el")
+
 (load "~/.emacs-config/package-management-init.el")
 (load "~/.emacs-config/general-configuration.el")
 (load "~/.emacs-config/dumb-jump-init.el")
