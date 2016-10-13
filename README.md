@@ -4,16 +4,17 @@ This is a self-contained, batteries-mostly-included, easily-bootstappable Emacs 
 
 Some general highlights:
 
-* `ag`
-* `auto-complete`
-* `flx-ido`
-* `flycheck`
-* `ido-vertical-mode`
-* `jedi`
-* `linum-relative`
-* `magit`
-* `projectile`
-* `smex`
+* [ag](https://github.com/Wilfred/ag.el)
+* [auto-complete](https://github.com/auto-complete/auto-complete)
+* [flx-ido (from flx)](https://github.com/lewang/flx)
+* [flycheck](https://github.com/flycheck/flycheck)
+* [ido-vertical-mode](https://github.com/creichert/ido-vertical-mode.el)
+* [jedi](https://github.com/tkf/emacs-jedi)
+* [linum-relative](https://github.com/coldnew/linum-relative)
+* [magit](https://github.com/magit/magit)
+* [projectile](https://github.com/bbatsov/projectile)
+* [smex](https://github.com/nonsequitur/smex)
+* [yasnippet](https://github.com/joaotavora/yasnippet)
 * a bunch of other nifty things that I'm probably forgetting
 
 ## Installation
@@ -29,6 +30,22 @@ The nice thing about this installation approach is that only two things are syml
 #### Emacs itself...
 
 On OSX, I use Emacs 25.1.1 from Homebrew - you can see the installation flags I use [here](https://github.com/natpen/dotfiles/blob/master/Brewfile#L11) in my [dotfiles](https://github.com/natpen/dotfiles) repo. I symlink it to Applications and switch off between running the windowed version from there and running the terminal version with `emacs -nw`.
+
+## Version Control Notes
+
+One of my favorite parts of getting comfortable with Emacs has been the tight integration one is able to create between development workflows and version control workflows. Simply switching from the good ol' shell-based Git porcelain to [Magit](https://github.com/magit/magit) was a bit of a profound experience for me. I've recently added [git-messenger](https://github.com/syohex/emacs-git-messenger) and [git-timemachine](https://github.com/pidu/git-timemachine) which add a few nice ways of interacting with version control from source code buffers themselves.
+
+### [magit](https://github.com/natpen/dot-emacs/blob/master/emacs-config/git-init.el)
+
+The illustrious Emacs-based Git porcelain. There's too much to cover in this README, but there is extensive documentation on it [here](https://magit.vc/manual/magit/). Highly recommended read.
+
+### [git-timemachine](https://github.com/natpen/dot-emacs/blob/master/emacs-config/git-init.el)
+
+This is handy for comparing successive revisions of a given file you're interacting with, as well as just quickly checking for the last time it was modified in source control.
+
+### [git-messenger](https://github.com/natpen/dot-emacs/blob/master/emacs-config/git-init.el)
+
+Curious what the last commit was to modify a certain piece of code? This will give you a quick popup with the commit message of said commit. See hints in the echo area for further actions, like viewing the entire commit in another buffer.
 
 ## Language-specific Notes
 
