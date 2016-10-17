@@ -13,6 +13,9 @@
 ;; ain't nobody got time to type "yes"
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; spaces by default, yo
+(setq-default indent-tabs-mode nil)
+
 (when (window-system)
   (tool-bar-mode 0)
   (when (fboundp 'horizontal-scroll-bar-mode)
