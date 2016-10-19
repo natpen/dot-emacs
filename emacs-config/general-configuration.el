@@ -37,27 +37,34 @@
    version-control t)        ; use versioned backups
 
 (use-package ag
-  :ensure t)
+  :ensure t
+  :defer t)
 (use-package diminish
-  :ensure t)
+  :ensure t
+  :defer t)
 (use-package dumb-jump
-  :ensure t)
+  :ensure t
+  :defer t)
 (use-package exec-path-from-shell
   :ensure t
   :config
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize)))
 (use-package expand-region
-	:ensure t
-	:bind ("C-=" . er/expand-region))
+  :ensure t
+  :bind ("C-=" . er/expand-region))
 (use-package ggtags
-  :ensure t)
+  :ensure t
+  :defer t)
 (use-package highlight-symbol
-  :ensure t)
+  :ensure t
+  :defer t)
 (use-package markdown-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 (use-package restclient
-	:ensure t)
+  :ensure t
+  :defer t)
 (use-package smartparens
   :ensure t)
 (use-package yaml-mode
@@ -66,7 +73,8 @@
   :ensure t
   :init (add-hook 'after-init-hook (load-theme 'zenburn t)))
 (use-package highlight-indentation
-	:ensure t)
+  :ensure t
+  :defer t)
 
 (defun delete-current-line ()
   "Delete (not kill) the current line."
