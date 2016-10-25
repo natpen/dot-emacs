@@ -72,9 +72,9 @@
   :ensure t)
 (use-package yaml-mode
   :ensure t)
-(use-package zenburn-theme
+(use-package planet-theme
   :ensure t
-  :init (add-hook 'after-init-hook (load-theme 'zenburn t)))
+  :init (add-hook 'after-init-hook (load-theme 'planet t)))
 (use-package highlight-indentation
   :ensure t
   :defer t)
