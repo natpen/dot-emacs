@@ -13,6 +13,9 @@
 ;; ain't nobody got time to type "yes"
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; because it's faster than the default scp
+(setq tramp-default-method "ssh")
+
 ;; spaces by default, yo
 (setq-default indent-tabs-mode nil)
 
