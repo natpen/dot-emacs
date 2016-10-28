@@ -19,6 +19,9 @@
 ;; spaces by default, yo
 (setq-default indent-tabs-mode nil)
 
+;; sentences end with one space, yo
+(setq sentence-end-double-space nil)
+
 (when (window-system)
   (tool-bar-mode 0)
   (when (fboundp 'horizontal-scroll-bar-mode)
