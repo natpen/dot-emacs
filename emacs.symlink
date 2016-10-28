@@ -20,6 +20,7 @@
 (load "~/.emacs-config/auto-complete-settings.el")
 (load "~/.emacs-config/writegood-init.el")
 (load "~/.emacs-config/yasnippet-init.el")
+(load "~/.emacs-config/orgmode-init.el")
 
 ;; language-specific
 (load "~/.emacs-config/golang-settings.el")
