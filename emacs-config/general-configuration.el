@@ -42,6 +42,8 @@
    kept-old-versions 6
    version-control t)        ; use versioned backups
 
+(global-hl-line-mode t)
+
 (when (fboundp 'winner-mode)
   (winner-mode 1))
 
