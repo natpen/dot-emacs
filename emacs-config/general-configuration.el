@@ -42,6 +42,9 @@
    kept-old-versions 6
    version-control t)        ; use versioned backups
 
+(when (fboundp 'winner-mode)
+  (winner-mode 1))
+
 (use-package ag
   :ensure t
   :defer t)
