@@ -17,8 +17,9 @@
 	which-key-description-replacement-alist
 	'(("Prefix Command" . "prefix")
           ("\\`cargo-process-" . "ℂ/")
-	  ("\\`projectile-" . "𝓟/")
-	  ("\\`flycheck-"   . "𝓕𝓒/")))
+	  ("\\`flycheck-"   . "𝓕𝓒/")
+          ("\\`ledger-" . "𝓛/")
+	  ("\\`projectile-" . "𝓟/")))
   (which-key-mode t))
 
 (provide 'which-key-init)

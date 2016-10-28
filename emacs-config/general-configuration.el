@@ -45,6 +45,10 @@
 (when (fboundp 'winner-mode)
   (winner-mode 1))
 
+(use-package ledger-mode
+  :ensure t
+  :mode "\\.ledger$")
+
 (use-package ag
   :ensure t
   :defer t)
