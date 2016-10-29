@@ -47,6 +47,14 @@
 (when (fboundp 'winner-mode)
   (winner-mode 1))
 
+(use-package beacon
+  :ensure t
+  :diminish ""
+  :config
+  (beacon-mode 1))
+
+(setq-default cursor-type 'bar)
+
 (use-package ledger-mode
   :ensure t
   :mode "\\.ledger$")
