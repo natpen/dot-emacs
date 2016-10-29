@@ -12,7 +12,8 @@
     (setq projectile-completion-system 'ido)
     (setq projectile-switch-project-action 'magit-status)
     (add-to-list 'projectile-globally-ignored-files ".DS_Store")
-    (add-to-list 'projectile-globally-ignored-files "node_modules")))
+    (add-to-list 'projectile-globally-ignored-files "node_modules"))
+  :bind ("C-c v" . projectile-ag))
 
 (provide 'projectile-init)
 ;;; projectile-init.el ends here
