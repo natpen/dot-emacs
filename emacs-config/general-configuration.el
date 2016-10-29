@@ -47,6 +47,24 @@
 (when (fboundp 'winner-mode)
   (winner-mode 1))
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
+(setq vc-follow-symlinks t)
+
+;; when typing, overwrite selected text
+(delete-selection-mode t)
+
+;; seems a bit crazy, right? better confirm with the user.
+(setq confirm-kill-emacs 'y-or-n-p)
+
+;; don't show the frim fram on startup
+(setq inhibit-startup-message t)
+(setq initial-scratch-message nil)
+
+;; use human-readable units in dired
+(setq-default dired-listing-switches "-alh")
+
 (use-package beacon
   :ensure t
   :diminish ""
