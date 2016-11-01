@@ -113,8 +113,9 @@ install_dot_emacs () {
 
     local overwrite_all=false backup_all=false skip_all=false
 
-    link_file "$DOT_EMACS_ROOT/emacs.symlink" "$HOME/.emacs"
-    link_file "$DOT_EMACS_ROOT/emacs-config" "$HOME/.emacs-config"
+    link_file "$DOT_EMACS_ROOT/init.el" "$HOME/.emacs.d/init.el"
+    link_file "$DOT_EMACS_ROOT/configuration.org" "$HOME/.emacs.d/configuration.org"
+    link_file "$DOT_EMACS_ROOT/linum-off.el" "$HOME/.emacs.d/linum-off.el"
 }
 
 install_dot_emacs

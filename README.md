@@ -1,5 +1,7 @@
 # natpen's dot-emacs
 
+NOTE: I just switched to a literate configuration, so this documentation is in the process of being migrated to the configuration itself. Treat organization.el as the source of truth.
+
 This is a self-contained, batteries-mostly-included, easily-bootstappable Emacs configuration, with a focus on modularization of settings and dependencies by development environment.
 
 Some general highlights:
