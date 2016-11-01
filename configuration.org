@@ -225,6 +225,28 @@ Where possible, the rest of this configuration is based on =use-package=; this c
            ("C-c ," . dumb-jump-back)))
 #+END_SRC
 
+*** engine-mode
+
+#+BEGIN_SRC emacs-lisp
+  (use-package engine-mode
+    :ensure t
+    :init
+    (progn
+      (setq engine/keybinding-prefix "C-c /"))
+    :config
+    (defengine duckduckgo
+      "https://duckduckgo.com/?q=%s"
+      :keybinding "d")
+    (defengine github-natpen
+      "https://github.com/search?utf8=✓&q=%s user:natpen&type=Code&ref=simplesearch"
+      :keybinding "n"
+      :docstring "Search natpen's code on Github")
+    (defengine google
+      "https://www.google.com/search?ie=utf-8&oe=utf-8&q=%s"
+      :keybinding "g")
+    (engine-mode t))
+#+END_SRC
+
 *** flycheck
 
 #+BEGIN_SRC emacs-lisp
