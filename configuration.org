@@ -74,6 +74,11 @@ Enable visualization of matching parens
   (show-paren-mode t)
 #+END_SRC
 
+Automatically insert matching brackets
+#+BEGIN_SRC emacs-lisp
+  (electric-pair-mode t)
+#+END_SRC
+
 Always highlight the current line containing point
 #+BEGIN_SRC emacs-lisp
   (global-hl-line-mode t)
