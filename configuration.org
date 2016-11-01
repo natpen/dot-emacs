@@ -544,15 +544,17 @@ Where possible, the rest of this configuration is based on =use-package=; this c
       (setq eshell-save-history-on-exit t)))
 #+END_SRC
 ** Git
+One of my favorite parts of getting comfortable with Emacs has been the tight integration one is able to create between development workflows and version control workflows. Simply switching from the good ol' shell-based Git porcelain to [[https://github.com/magit/magit][Magit]] was a bit of a profound experience for me. I've recently added [[https://github.com/syohex/emacs-git-messenger][git-messenger]] and [[https://github.com/pidu/git-timemachine][git-timemachine]] which add a few nice ways of interacting with version control from source code buffers themselves.
 *** git-messenger
+Curious what the last commit was to modify a certain piece of code? This will give you a quick popup with the commit message of said commit. See hints in the echo area for further actions, like viewing the entire commit in another buffer.
 #+BEGIN_SRC emacs-lisp
   (use-package git-messenger
     :ensure t
     :bind
     ("C-x v p" . git-messenger:popup-message))
 #+END_SRC
-
 *** git-timemachine
+This is handy for comparing successive revisions of a given file you're interacting with, as well as just quickly checking for the last time it was modified in source control.
 #+BEGIN_SRC emacs-lisp
   (use-package git-timemachine
     :ensure t
@@ -560,8 +562,8 @@ Where possible, the rest of this configuration is based on =use-package=; this c
     (("C-x v t" . git-timemachine)
      ("C-x v o" . git-timemachine-toggle)))
 #+END_SRC
-
 *** magit
+The illustrious Emacs-based Git porcelain. There's too much to cover in this README, but there is extensive documentation on it [[https://magit.vc/manual/magit/][elsewhere]]. Highly recommended read.
 #+BEGIN_SRC emacs-lisp
   (use-package magit
     :ensure t
@@ -579,6 +581,10 @@ Where possible, the rest of this configuration is based on =use-package=; this c
 #+END_SRC
 * Development Environments
 ** Go
+The Go development environment relies on [[https://github.com/dominikh/go-mode.el][go-mode]], go-autocomplete, and [[https://github.com/syohex/emacs-go-eldoc][go-eldoc]]. Flycheck has built-in support for Go, so that works without any additional packages.
+
+- _go-mode_: this package also integrates with [[https://github.com/rogpeppe/godef][godef]], so that's a (highly recommended) dependency if you want it.
+- _go-autocomplete_: this package relies on [[https://github.com/nsf/gocode][gocode]]. You can skip the Emacs-specific steps they provide.
 
 #+BEGIN_SRC emacs-lisp
   (use-package go-eldoc
@@ -617,6 +623,9 @@ Where possible, the rest of this configuration is based on =use-package=; this c
 #+END_SRC
 
 ** Javascript
+The Javascript development environment relies on [[https://github.com/brettlangdon/jsfmt.el][jsfmt]].
+
+- _jsfmt_: this package relies on [[https://github.com/rdio/jsfmt][jsfmt (the indentically-named global npm package consumed by this Emacs package)]].
 
 #+BEGIN_SRC emacs-lisp
   (use-package jsfmt
@@ -661,6 +670,10 @@ Where possible, the rest of this configuration is based on =use-package=; this c
 #+END_SRC
 
 ** Python
+The Python development environment relies on python-mode, [[https://github.com/paetzke/py-yapf.el][py-yapf]], and [[https://github.com/tkf/emacs-jedi][jedi]].
+
+- _py-yapf_: provides strongly-opiniated (but customizable) code formatting, similar to gofmt. Make sure to `pip install yapf` from your shell for this to work properly. You'll have to call it manually, but if you want it to happen automatically on save, there is a commented out line in the config for accomplishing that. Just uncomment it.
+- _jedi_: autocompletion
 
 #+BEGIN_SRC emacs-lisp
   (add-hook 'python-mode-hook (lambda()
@@ -680,6 +693,9 @@ Where possible, the rest of this configuration is based on =use-package=; this c
 #+END_SRC
 
 ** Rust
+The Rust development environment relies on [[https://github.com/rust-lang/rust-mode][rust-mode]], [[https://github.com/company-mode/company-mode][company]], [[https://github.com/kwrooijen/cargo.el][cargo]], [[https://github.com/racer-rust/emacs-racer][racer]], and [[https://github.com/flycheck/flycheck-rust][flycheck-rust]].
+
+- _company_: this is currently the only place I use company for autocompletion - in most places I use [[https://github.com/auto-complete/auto-complete][auto-complete]], but the Emacs Rust autocomplete integration only seems to play well with company.
 
 #+BEGIN_SRC emacs-lisp
   (use-package cargo
