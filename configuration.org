@@ -751,7 +751,7 @@ The Rust development environment relies on [[https://github.com/rust-lang/rust-m
     :diminish (racer-mode . "rcr")
     :defer t
     :init (progn
-            (setq racer-rust-src-path "~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
+            (setq racer-rust-src-path (exec-path-from-shell-copy-env "RUST_SRC_PATH"))
             (add-hook 'racer-mode-hook (lambda()
                                          (company-mode)
                                          (eldoc-mode)))))
