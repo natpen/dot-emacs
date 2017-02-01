@@ -527,7 +527,7 @@ Where possible, the rest of this configuration is based on =use-package=; this c
   (use-package exec-path-from-shell
     :ensure t
     :config
-    (when (memq window-system '(mac ns))
+    (when (memq window-system '(mac ns x))
       (exec-path-from-shell-initialize)))
   (use-package expand-region
     :ensure t
