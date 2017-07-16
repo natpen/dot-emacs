@@ -601,10 +601,12 @@ The illustrious Emacs-based Git porcelain. There's too much to cover in this REA
     (progn
       (setq magit-completing-read-function 'magit-ido-completing-read)
       (setq magit-branch-arguments nil)
+      (global-magit-file-mode)
       (add-hook 'after-save-hook 'magit-after-save-refresh-status))
     :bind
     (("C-x g" . magit-status)
-     ("C-x M-g" . magit-dispatch-popup)))
+     ("C-x M-g" . magit-dispatch-popup)
+     ("C-x v l" . magit-log-buffer-file)))
 #+END_SRC
 * Development Environments
 ** Go
