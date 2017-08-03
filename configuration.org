@@ -433,6 +433,8 @@ Where possible, the rest of this configuration is based on =use-package=; this c
 
   (define-key global-map "\C-c\C-x\C-s" 'mark-done-and-archive)
 
+  (setq org-todo-keywords
+    '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
   (setq org-log-done 'time)
 #+END_SRC
 
