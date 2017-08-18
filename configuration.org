@@ -712,23 +712,64 @@ The Javascript development environment relies on [[https://github.com/brettlangd
 The Python development environment relies on python-mode, [[https://github.com/paetzke/py-yapf.el][py-yapf]], and [[https://github.com/tkf/emacs-jedi][jedi]].
 
 - _py-yapf_: provides strongly-opiniated (but customizable) code formatting, similar to gofmt. Make sure to `pip install yapf` from your shell for this to work properly. You'll have to call it manually, but if you want it to happen automatically on save, there is a commented out line in the config for accomplishing that. Just uncomment it.
-- _jedi_: autocompletion
+- _jedi_: provides Python autocompletion functionality. For jedi to work, you'll need to install the jedi server which is done in Emacs by running M-x jedi:install-server
 
 #+BEGIN_SRC emacs-lisp
-  (add-hook 'python-mode-hook (lambda()
-                                (use-package py-yapf
-                                  :ensure t
-                                  :config (py-yapf-enable-on-save))
-                                (use-package jedi
-                                  :ensure t
-                                  :config
-                                  (progn
-                                    (jedi:setup)
-                                    (setq jedi:complete-on-dot t)))
-                                (eldoc-mode)
-                                ;; (setq tab-width 2)
-                                (yas-reload-all)
-                                (yas-minor-mode)))
+
+  ;;(use-package py-yapf
+  ;;  :ensure t
+  ;;  :config (py-yapf-enable-on-save))
+
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package sphinx-doc
+    :ensure t
+    :init (add-hook 'python-mode-hook (lambda ()
+                                        (require 'sphinx-doc)
+                                        (sphinx-doc-mode t))))
+
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package jedi
+    :ensure t
+    :init
+    (progn
+      (add-hook 'python-mode-hook 'jedi:setup)
+      (add-hook 'python-mode-hook 'jedi:ac-setup))
+    :config
+    (progn
+      (jedi:setup)
+      (setq jedi:complete-on-dot t)))
+
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package python-mode
+    :config (progn
+              (eldoc-mode)
+              (highlight-indentation-mode)
+              (yas-reload-all)
+              (yas-minor-mode)
+              (setq-default python-indent 4)
+              (setq python-fill-docstring-style 'onetwo)
+
+              (when (executable-find "ipython")
+                (setq
+                 python-shell-interpreter "ipython"
+                 python-shell-interpreter-args ""
+                 python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+                 python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+                 python-shell-completion-setup-code
+                 "from IPython.core.completerlib import module_completion"
+                 python-shell-completion-module-string-code
+                 "';'.join(module_completion('''%s'''))\n"
+                 python-shell-completion-string-code
+                 "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))))
 #+END_SRC
 
 ** Rust
