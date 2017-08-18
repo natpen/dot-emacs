@@ -244,6 +244,9 @@ Where possible, the rest of this configuration is based on =use-package=; this c
     (defengine google
       "https://www.google.com/search?ie=utf-8&oe=utf-8&q=%s"
       :keybinding "g")
+    (defengine stack-overflow
+      "https://stackoverflow.com/search?q=%s"
+      :keybinding "s")
     (engine-mode t))
 #+END_SRC
 
