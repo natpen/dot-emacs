@@ -232,7 +232,8 @@ Where possible, the rest of this configuration is based on =use-package=; this c
     :ensure t
     :init
     (progn
-      (setq engine/keybinding-prefix "C-c /"))
+      (setq engine/keybinding-prefix "C-c /")
+      (setq engine/browser-function 'browse-url-chrome))
     :config
     (defengine duckduckgo
       "https://duckduckgo.com/?q=%s"
