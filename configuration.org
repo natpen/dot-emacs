@@ -400,6 +400,24 @@ Where possible, the rest of this configuration is based on =use-package=; this c
         (add-to-list 'yas-snippet-dirs "~/code/yasnippet-snippets")
       (setq yas-snippet-dirs (list "~/code/yasnippet-snippets"))))
 #+END_SRC
+*** graphviz-dot-mode
+
+#+BEGIN_SRC emacs-lisp
+  (defun graphviz-dot-compile-and-preview ()
+    "Compile and preview the graph"
+    (interactive)
+    (progn
+      (save-buffer)
+      (compile compile-command)
+      (sleep-for 0 100)
+      (graphviz-dot-preview)))
+
+  (use-package graphviz-dot-mode
+    :ensure t
+    :bind
+    (:map graphviz-dot-mode-map
+          ("C-c g" . graphviz-dot-compile-and-preview)))
+#+END_SRC
 *** org-mode
 
 #+BEGIN_SRC emacs-lisp
