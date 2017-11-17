@@ -768,6 +768,7 @@ The Python development environment relies on python-mode, [[https://github.com/p
 #+BEGIN_SRC emacs-lisp
 
   (use-package python-mode
+    :mode "BUILD"
     :config (progn
               (eldoc-mode)
               (highlight-indentation-mode)
