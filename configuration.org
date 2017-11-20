@@ -322,22 +322,22 @@ Where possible, the rest of this configuration is based on =use-package=; this c
     :ensure t
     :diminish which-key-mode
     :config
-    (setq which-key-key-replacement-alist
-          '(("<\\([[:alnum:]-]+\\)>" . "\\1")
-            ("left"                  . "◀")
-            ("right"                 . "▶")
-            ("up"                    . "▲")
-            ("down"                  . "▼")
-            ("delete"                . "DEL")
-            ("next"                  . "PgDn")
-            ("prior"                 . "PgUp"))
-
-          which-key-description-replacement-alist
-          '(("Prefix Command" . "prefix")
-            ("\\`cargo-process-" . "ℂ/")
-            ("\\`flycheck-"   . "𝓕𝓒/")
-            ("\\`ledger-" . "𝓛/")
-            ("\\`projectile-" . "𝓟/")))
+    (setq which-key-replacement-alist
+          '(((nil . "Prefix Command") . (nil . "prefix"))
+            ((nil . "\\`\\?\\?\\'") nil . "lambda")
+            ((nil . "which-key-show-next-page-no-cycle") nil . "wk next pg")
+            (("<\\([[:alnum:]-]+\\)>") "\\1")
+            (("left") "◀")
+            (("right") "▶")
+            (("up") "▲")
+            (("down") "▼")
+            (("delete") "DEL")
+            (("next") "PgDn")
+            (("prior") "PgUp")
+            ((nil . "\\`cargo-process-") . (nil . "ℂ/"))
+            ((nil . "\\`flycheck-") . (nil . "𝓕𝓒/"))
+            ((nil . "\\`ledger-") . (nil . "𝓛/"))
+            ((nil . "\\`projectile-") . (nil . "𝓟/"))))
     (which-key-mode t))
 #+END_SRC
 *** projectile
