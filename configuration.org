@@ -337,7 +337,8 @@ Where possible, the rest of this configuration is based on =use-package=; this c
             ((nil . "\\`cargo-process-") . (nil . "ℂ/"))
             ((nil . "\\`flycheck-") . (nil . "𝓕𝓒/"))
             ((nil . "\\`ledger-") . (nil . "𝓛/"))
-            ((nil . "\\`projectile-") . (nil . "𝓟/"))))
+            ((nil . "\\`projectile-") . (nil . "𝓟/"))
+            ((nil . "\\`persp-") . (nil . "ℙ/"))))
     (which-key-mode t))
 #+END_SRC
 *** projectile
