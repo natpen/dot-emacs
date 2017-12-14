@@ -888,3 +888,12 @@ The Rust development environment relies on [[https://github.com/rust-lang/rust-m
     :defer t
     :pin melpa-stable)
 #+END_SRC
+
+** Groovy
+
+#+BEGIN_SRC emacs-lisp
+  (use-package groovy-mode
+    :ensure    t
+    :defer     t
+    :mode      ("\\.\\(groovy\\|gradle\\)$" "Jenkinsfile"))
+#+END_SRC
