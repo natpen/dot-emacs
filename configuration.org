@@ -756,6 +756,31 @@ The Python development environment relies on python-mode, [[https://github.com/p
 - _jedi_: provides Python autocompletion functionality. For jedi to work, you'll need to install the jedi server which is done in Emacs by running M-x jedi:install-server
 
 #+BEGIN_SRC emacs-lisp
+  (use-package pyenv-mode
+    :ensure t
+    :config
+    (defun projectile-pyenv-mode-set ()
+      "Set pyenv version matching project name."
+      (let ((project (projectile-project-name)))
+        (if (member project (pyenv-mode-versions))
+            (pyenv-mode-set project)
+          (pyenv-mode-unset))))
+    (add-hook 'projectile-switch-project-hook 'projectile-pyenv-mode-set)
+    (add-hook 'persp-switch-hook              'projectile-pyenv-mode-set)
+    (add-hook 'python-mode-hook               'pyenv-mode))
+
+  (use-package pyenv-mode-auto
+    :ensure t)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (use-package py-yapf
+    :ensure t
+    :ensure-system-package (yapf . "source ~/.emacs.d/.python-environments/default/bin/activate && pip install yapf")
+    :config (py-yapf-enable-on-save))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
   ;;(use-package py-yapf
   ;;  :ensure t
   ;;  :ensure-system-package (yapf . "pip install yapf && pip3 install yapf")
@@ -765,7 +790,7 @@ The Python development environment relies on python-mode, [[https://github.com/p
 #+BEGIN_SRC emacs-lisp
   (use-package sphinx-doc
     :ensure t
-    :ensure-system-package (sphinx . "pip install sphinx && pip3 install sphinx")
+    :ensure-system-package (sphinx . "source ~/.emacs.d/.python-environments/default/bin/activate && pip install sphinx")
     :init (add-hook 'python-mode-hook (lambda ()
                                         (require 'sphinx-doc)
                                         (sphinx-doc-mode t))))
@@ -774,7 +799,7 @@ The Python development environment relies on python-mode, [[https://github.com/p
 #+BEGIN_SRC emacs-lisp
   (use-package jedi
     :ensure t
-    :ensure-system-package (jedi . "pip install jedi && pip3 install jedi")
+    :ensure-system-package (jedi . "source ~/.emacs.d/.python-environments/default/bin/activate && pip install jedi")
     :init
     (progn
       (add-hook 'python-mode-hook 'jedi:setup)
@@ -787,7 +812,9 @@ The Python development environment relies on python-mode, [[https://github.com/p
 
 #+BEGIN_SRC emacs-lisp
   (use-package python-mode
-    :mode "BUILD"
+    :ensure t
+    :ensure-system-package (flake8 . "source ~/.emacs.d/.python-environments/default/bin/activate && pip install flake8")
+    :mode ("BUILD" "\\.wsgi$")
     :config (progn
               (eldoc-mode)
               (highlight-indentation-mode)
