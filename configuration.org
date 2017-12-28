@@ -280,8 +280,9 @@ Where possible, the rest of this configuration is based on =use-package=; this c
     :ensure t
     :bind (("C->" . mc/mark-next-like-this)
            ("C-<" . mc/mark-previous-like-this)
-           ("C-S-c C-S-c" . mc/edit-lines)
-           ("C-c C-<" . mc/mark-all-like-this)))
+           ("C-S-c C-e" . mc/edit-lines)
+           ("C-S-c C-<" . mc/mark-all-like-this)
+           ("C-S-c C-<" . mc/mark-all-like-this-dwim)))
 #+END_SRC
 *** linum-relative
 
