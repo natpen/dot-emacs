@@ -596,6 +596,8 @@ Where possible, the rest of this configuration is based on =use-package=; this c
     :ensure t)
   (use-package yaml-mode
     :ensure t)
+  (use-package toml-mode
+    :ensure t)
   (use-package planet-theme
     :ensure t
     :init (add-hook 'after-init-hook (load-theme 'planet t)))
