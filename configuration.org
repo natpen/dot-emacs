@@ -673,6 +673,16 @@ The illustrious Emacs-based Git porcelain. There's too much to cover in this REA
      ("C-x M-g" . magit-dispatch-popup)
      ("C-x v l" . magit-log-buffer-file)))
 #+END_SRC
+** Modeline
+*** moody
+#+BEGIN_SRC emacs-lisp
+  (use-package moody
+    :ensure t
+    :config
+    (setq x-underline-at-descent-line t)
+    (moody-replace-mode-line-buffer-identification)
+    (moody-replace-vc-mode))
+#+END_SRC
 * Development Environments
 ** Go
 The Go development environment relies on [[https://github.com/dominikh/go-mode.el][go-mode]], go-autocomplete, and [[https://github.com/syohex/emacs-go-eldoc][go-eldoc]]. Flycheck has built-in support for Go, so that works without any additional packages.
