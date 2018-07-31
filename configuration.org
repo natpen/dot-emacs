@@ -157,12 +157,6 @@ Ask before recursively deleting a directory, though
   (setq dired-recursive-deletes 'top)
 #+END_SRC
 
-** Mail
-*** Mutt
-
-#+BEGIN_SRC emacs-lisp
-  (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
-#+END_SRC
 ** IRC
 
 #+BEGIN_SRC emacs-lisp
@@ -214,6 +208,69 @@ Where possible, the rest of this configuration is based on =use-package=; this c
   (require 'use-package)
   (use-package use-package-ensure-system-package
     :ensure t)
+#+END_SRC
+** Mail
+*** mu4e
+
+#+BEGIN_SRC emacs-lisp
+  (use-package mu4e
+    :bind ("C-c m" . mu4e)
+    :init
+    (progn
+      (defvar np-mu4e-combined-inbox-bookmark "maildir:/inbox OR maildir:/flagged" "What I consider to be my 'inbox'")
+      (setq mu4e-mu-binary "/usr/local/bin/mu"
+            mu4e-maildir (expand-file-name "~/mail/gmail-personal")
+            mu4e-update-interval 1800
+            ;;smtpmail-starttls-credentials '(("mail.hover.com" 587 nil nil))
+            ;;smtpmail-default-smtp-server "mail.hover.com"
+            ;;smtpmail-smtp-server "mail.hover.com"
+            ;;smtpmail-smtp-service 587
+            ;;smtpmail-debug-info t
+            mu4e-get-mail-command "offlineimap"
+            mu4e-view-show-images t
+            mu4e-view-image-max-width 800 ;; note this won't work without "emacs with imagemagick support"
+            mu4e-maildir-shortcuts
+            '( ("/inbox"     . ?i)
+               ("/flagged"   . ?f)
+               ("/archive"   . ?a)
+               ("/sent"      . ?s))
+            mu4e-bookmarks
+            '((np-mu4e-combined-inbox-bookmark "Smart Inbox" ?i)
+              ((concat "(" np-mu4e-combined-inbox-bookmark ") AND flag:unread") "Unread" ?u)))))
+
+  (use-package smtpmail
+    :commands (smtpmail-send-queued-mail message-send-and-exit)
+
+    :init
+    ;; Authentication is handled by ~/.authinfo.gpg with this format:
+    ;; machine smtp.gmail.com login USER@gmail.com password PASSWORD port 465
+    (setq message-send-mail-function 'smtpmail-send-it
+          starttls-use-gnutls t
+
+          smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+          smtpmail-auth-credentials
+            '(("smtp.gmail.com" 587 "natalie.pendragon@gmail.com" nil))
+
+          sendmail-coding-system 'utf-8
+          mm-coding-system-priorities '(utf-8)
+          smtpmail-stream-type 'ssl
+          smtpmail-smtp-server "smtp.gmail.com"
+          mail-user-agent 'mu4e-user-agent
+          smtpmail-smtp-service 587
+
+          ;; the following the two setting ensure offline composition works
+          smtpmail-queue-mail nil
+          smtpmail-queue-dir (concat mu4e-maildir "/send-queue/cur")))
+
+  (use-package mu4e-alert
+    :ensure t
+    :config
+    (mu4e-alert-enable-mode-line-display))
+
+  (use-package mu4e-maildirs-extension
+    :ensure t
+    :config
+    (mu4e-maildirs-extension))
 #+END_SRC
 ** Utility
 *** dumb-jump
