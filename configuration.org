@@ -42,6 +42,11 @@ Sentences end with one space, yo
   (setq sentence-end-double-space nil)
 #+END_SRC
 
+Live dangerously and enable all the commands.
+#+BEGIN_SRC emacs-lisp
+  (setq disabled-command-function nil)
+#+END_SRC
+
 Don't show scroll bars when Emacs is running in windowed mode
 #+BEGIN_SRC emacs-lisp
   (when (window-system)
