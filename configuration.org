@@ -640,6 +640,14 @@ Where possible, the rest of this configuration is based on =use-package=; this c
     :ensure t
     :bind ("C-." . imenu-anywhere))
 #+END_SRC
+*** protobuf
+
+Major mode support for [protocol buffers](https://github.com/protocolbuffers/protobuf).
+
+#+BEGIN_SRC emacs-lisp
+  (use-package protobuf-mode
+    :ensure t)
+#+END_SRC
 ** Git
 One of my favorite parts of getting comfortable with Emacs has been the tight integration one is able to create between development workflows and version control workflows. Simply switching from the good ol' shell-based Git porcelain to [[https://github.com/magit/magit][Magit]] was a bit of a profound experience for me. I've recently added [[https://github.com/syohex/emacs-git-messenger][git-messenger]] and [[https://github.com/pidu/git-timemachine][git-timemachine]] which add a few nice ways of interacting with version control from source code buffers themselves.
 *** git-messenger
