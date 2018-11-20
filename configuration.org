@@ -975,3 +975,10 @@ The Rust development environment relies on [[https://github.com/rust-lang/rust-m
     :ensure    t
     :defer     t)
 #+END_SRC
+** Fish
+
+#+BEGIN_SRC emacs-lisp
+  (use-package fish-mode
+    :ensure    t
+    :defer     t)
+#+END_SRC
