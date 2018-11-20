@@ -968,3 +968,10 @@ The Rust development environment relies on [[https://github.com/rust-lang/rust-m
     :defer     t
     :mode      ("\\.\\(groovy\\|gradle\\)$" "Jenkinsfile"))
 #+END_SRC
+** PHP
+
+#+BEGIN_SRC emacs-lisp
+  (use-package php-mode
+    :ensure    t
+    :defer     t)
+#+END_SRC
